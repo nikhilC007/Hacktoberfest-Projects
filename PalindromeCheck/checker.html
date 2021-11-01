@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <h1>Palindrome Checker</h1>
+    <div class="outer">
+        <input id="user_input" style="width: 20em;" onkeyup="UserInputChanged(this)" placeholder="Enter a string to check for palindrome" maxlength="50" />
+        <div id="result"> </div>
+    </div>
+    <script>
+	    /* core function */
+      function UserInputChanged(input_box) {
+        var input = input_box.value;
+        var index = 1;
+        var len = input.length
+        var isPalin = true;
+
+        for (let index = 0; index < len/2; index++) {
+          if (input[index] != input[len-1-index]) {
+            isPalin = false;
+            break;
+          }
+        }
+
+     document.getElementById("result").innerText = input + " " + (isPalin ? "IS A " : "IS NOT A ") + "palindrome";
+  }
+
+    </script>
+</body>
+</html> 
